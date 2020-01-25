@@ -28,7 +28,7 @@ class App extends Component {
             <Route path='/user'>
               <User />
             </Route>
-            <Route></Route>
+            <Route path='Textfield' Component={TextField} />
             <Route>
               <Input />
             </Route>

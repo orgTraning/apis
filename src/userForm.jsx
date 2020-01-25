@@ -4,34 +4,26 @@ class TextField extends Component {
   render() {
     const {
       id,
-      city,
-      phone,
-      companyName,
-      userName,
       type,
-      email,
       placeholder,
       name,
-      changeHandler
+      changeHandler,
+      value,
+      label
     } = this.props;
 
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type={type}
-            id={id}
-            name={name}
-            userName={userName}
-            city={city}
-            phone={phone}
-            companyName={companyName}
-            email={email}
-            onChange={changeHandler}
-            placeholder={placeholder || 'placeholder'}
-          />
-        </form>
-      </div>
+      <>
+        <label>{label}</label>
+        <input
+          type={type}
+          id={id}
+          name={name}
+          onChange={changeHandler}
+          placeholder={placeholder}
+          value={value}
+        />
+      </>
     );
   }
 }
