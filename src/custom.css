@@ -1,0 +1,12 @@
+.userTable {
+  background-color: aquamarine;
+  border: 1px solid black;
+  width: 100%;
+}
+.userTable th {
+  border: 1px solid black;
+  padding: 5px;
+}
+.userTable td {
+  border: 1px solid black;
+}
