@@ -1,0 +1,41 @@
+.userTable {
+  background-color: aquamarine;
+  border: 1px solid black;
+  width: 100%;
+}
+.userTable th {
+  border: 1px solid black;
+  padding: 5px;
+}
+.userTable td {
+  border: 1px solid black;
+}
+.userTable button {
+  border: none;
+  border: 1px dotted blueviolet;
+  padding: 5px;
+  margin-left: 20px;
+}
+/* ul span {
+  display: inline;
+  padding: 20px;
+  margin: 40px;
+} */
+.navBar {
+  height: 50px;
+  background-color: burlywood;
+  padding: 20px;
+  text-align: center;
+}
+.navBar ul span {
+  font-size: 20px;
+}
+.inputField {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+}
+.inputFieldButton {
+  text-align: center;
+}

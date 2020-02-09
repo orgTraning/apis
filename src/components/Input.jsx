@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import TextField from './userForm';
-
+import { connect } from 'react-redux';
+import TextField from './UserForm';
+import { postUser } from '../action/userAction';
 class Input extends Component {
   state = {
     name: '',
     email: '',
-    phone: 0,
-    city: ''
+    phone: 0
   };
   changeHandler = e => {
     console.log(`${e.target.name}: ${e.target.value}`);
@@ -14,21 +14,16 @@ class Input extends Component {
   };
   submitHandler = event => {
     event.preventDefault();
-    const { name, email, city } = this.state;
-    const data = {
-      username: name,
-      email,
-      city
-    };
-    console.log(data);
-    // onAddUser(data);
+    this.props.postUser(this.state);
   };
+
   render() {
-    const { name, email, phone, city } = this.state;
+    const { name, email, phone } = this.state;
     return (
       <div>
         <form onSubmit={this.submitHandler}>
           <TextField
+            label='Name:  '
             type='text'
             id='123'
             name='name'
@@ -36,18 +31,18 @@ class Input extends Component {
             placeholder={'Please enter name'}
             value={name}
           />
-
           <TextField
-            label='Email'
+            label='Email:  '
             type='email'
             id='email'
             name='email'
             changeHandler={this.changeHandler}
-            placeholder={'Please enter email'}
+            placeholder={'Please enter Email'}
             value={email}
           />
 
           <TextField
+            label='Phone:  '
             type='number'
             id='phone'
             name='phone'
@@ -56,18 +51,17 @@ class Input extends Component {
             value={phone}
           />
 
-          <TextField
-            type='text'
-            id='city'
-            name='city'
-            changeHandler={this.changeHandler}
-            placeholder={'Please enter city'}
-            value={city}
-          />
-          <input type='submit' value='Send' />
+          <input type='submit' value='Send' className='inputFieldButton' />
         </form>
       </div>
     );
   }
 }
-export default Input;
+const mapStateToProps = state => {
+  return {
+    formReducer: state.userFormReducer
+  };
+};
+export default connect(mapStateToProps, {
+  postUser
+})(Input);

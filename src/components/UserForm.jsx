@@ -13,7 +13,7 @@ class TextField extends Component {
     } = this.props;
 
     return (
-      <>
+      <div className='inputField'>
         <label>{label}</label>
         <input
           type={type}
@@ -23,7 +23,7 @@ class TextField extends Component {
           placeholder={placeholder}
           value={value}
         />
-      </>
+      </div>
     );
   }
 }
